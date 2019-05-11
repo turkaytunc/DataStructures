@@ -16,6 +16,7 @@ Node *head = NULL;
 Node *current = NULL;
 
 void InsertLast(int data);
+void InsertFirst(int data);
 void PrintList();
 
 int main()
@@ -27,7 +28,7 @@ int main()
 	{
 		cin >> data;
 		if (data == -1)break;
-		InsertLast(data);
+		InsertFirst(data);
 		system("cls");
 		PrintList();
 	}
@@ -73,4 +74,15 @@ void PrintList()
 
 	cout << "NULL\n";
 
+}
+
+//insert new data to beginning of list
+void InsertFirst(int data)
+{
+	Node *temp = new Node();
+	temp->data = data;
+	temp->next = NULL;
+
+	temp->next = head;
+	head = temp;
 }
