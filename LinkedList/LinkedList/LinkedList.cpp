@@ -51,10 +51,8 @@ void InsertFirst(Node **head, int data)
 
 	temp->next = *head;
 	*head = temp;
-
-	
 }
-
+//Insert item in the end of the list
 void InsertLast(Node **head, int data)
 {
 	Node *temp = new Node();
@@ -65,17 +63,14 @@ void InsertLast(Node **head, int data)
 	//if there is no data in LinkedList, temp is the new head
 	if (*head == NULL) *head = temp;
 
-
 	//iterate through last node and insert new node
 	else
 	{
 		while (current->next != NULL) current = current->next;
-
 		current->next = temp;
 	}
-
 }
-
+//Delete item at n. position
 void DeleteListItem(Node **head, int n)
 {
 	current = *head;
@@ -103,8 +98,7 @@ void DeleteListItem(Node **head, int n)
 	}
 
 }
-
-//start with head  , until current node is not empty print node's data
+//Print items in the list
 void PrintList(Node **head)
 {
 	current = *head;
@@ -114,9 +108,7 @@ void PrintList(Node **head)
 		cout << current->data << " -> ";
 		current = current->next;
 	}
-
 	cout << "NULL\n";
-
 }
 
 
