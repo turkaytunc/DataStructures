@@ -14,11 +14,11 @@ public:
 };
 Node *current = NULL;
 
-
 void InsertFirst(Node **head, int data);
 void InsertLast(Node **head, int data);
 void PrintList(Node **head);
-void DeleteListItem(Node **head, int n);
+void DeleteItem(Node **head, int n);
+void DeleteItem(int key, Node **head);
 
 int main()
 {
@@ -38,7 +38,11 @@ int main()
 	}
 	cout << "Delete item at index \n";
 	cin >> n;
-	DeleteListItem(&head, n);
+
+	DeleteItem(&head, n);
+	PrintList(&head);
+
+	DeleteItem(5, &head);
 	PrintList(&head);
 	cin >> ch;
 }
@@ -72,7 +76,7 @@ void InsertLast(Node **head, int data)
 	}
 }
 //Delete item at n. position
-void DeleteListItem(Node **head, int n)
+void DeleteItem(Node **head, int n)
 {
 	current = *head;
 	Node *prev = current;
@@ -98,6 +102,22 @@ void DeleteListItem(Node **head, int n)
 		}
 	}
 
+}
+void DeleteItem(int key, Node ** head)
+{
+	current = *head;
+	int count = 0;
+
+	while (current != NULL)
+	{
+		count++;
+		if (current->data == key)
+		{
+			DeleteItem(head, count);
+			return;
+		}
+		current = current->next;
+	}
 }
 //Print items in the list
 void PrintList(Node **head)
