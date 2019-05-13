@@ -103,6 +103,7 @@ void DeleteItem(Node **head, int n)
 	}
 
 }
+//Delete item by value
 void DeleteItem(int key, Node ** head)
 {
 	current = *head;
@@ -131,5 +132,3 @@ void PrintList(Node **head)
 	}
 	cout << "NULL\n";
 }
-
-
