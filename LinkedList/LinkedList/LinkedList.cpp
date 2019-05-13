@@ -24,7 +24,8 @@ int main()
 {
 	char ch;
 	int data = 0;
-	
+
+
 
 	while (data != -1)
 	{
@@ -36,7 +37,7 @@ int main()
 	}
 
 
-	cin >> ch;   
+	cin >> ch;
 }
 
 //insert new data to beginning of list
@@ -57,7 +58,7 @@ void InsertLast(int data)
 	temp->next = NULL;
 
 	current = head;
-	
+
 	//if there is no data in LinkedList, temp is the new head
 	if (head == NULL) head = temp;
 
@@ -66,7 +67,7 @@ void InsertLast(int data)
 	else
 	{
 		while (current->next != NULL) current = current->next;
-		
+
 		current->next = temp;
 	}
 }
@@ -85,4 +86,5 @@ void PrintList()
 	cout << "NULL\n";
 
 }
+
 

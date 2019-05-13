@@ -20,7 +20,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{C483697E-431E-4E0C-A5F0-EEA6F5825882}</ProjectGuid>
+    <ProjectGuid>{7B3D64CB-BB45-4A9D-9BA3-57CB62992D6C}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>LinkedList</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
