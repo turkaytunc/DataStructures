@@ -15,14 +15,16 @@ struct Node
 Node *head = NULL;
 Node *current = NULL;
 
-void InsertLast(int data);
 void InsertFirst(int data);
+void InsertLast(int data);
 void PrintList();
+
 
 int main()
 {
 	char ch;
 	int data = 0;
+	
 
 	while (data != -1)
 	{
@@ -34,9 +36,18 @@ int main()
 	}
 
 
-
-
 	cin >> ch;   
+}
+
+//insert new data to beginning of list
+void InsertFirst(int data)
+{
+	Node *temp = new Node();
+	temp->data = data;
+	temp->next = NULL;
+
+	temp->next = head;
+	head = temp;
 }
 
 void InsertLast(int data)
@@ -60,7 +71,6 @@ void InsertLast(int data)
 	}
 }
 
-
 //start with head  , until current node is not empty print node's data
 void PrintList()
 {
@@ -76,13 +86,3 @@ void PrintList()
 
 }
 
-//insert new data to beginning of list
-void InsertFirst(int data)
-{
-	Node *temp = new Node();
-	temp->data = data;
-	temp->next = NULL;
-
-	temp->next = head;
-	head = temp;
-}
