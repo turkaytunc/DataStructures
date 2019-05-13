@@ -16,9 +16,8 @@ Node *current = NULL;
 
 void InsertFirst(Node **head, int data);
 void InsertLast(Node **head, int data);
-void PrintList(Node *head);
-
-
+void PrintList(Node **head);
+void DeleteListItem(Node **head, int n);
 
 int main()
 {
@@ -26,17 +25,20 @@ int main()
 
 	char ch;
 	int data = 0;
+	int n = 0;
 
 	while (data != -1)
 	{
 		cin >> data;
 		if (data == -1)break;
-		InsertFirst(&head,data);
+		InsertLast(&head,data);
 		system("cls");
-		PrintList(head);
+		PrintList(&head);
 	}
-
-
+	cout << "Delete item at index \n";
+	cin >> n;
+	DeleteListItem(&head, n);
+	PrintList(&head);
 	cin >> ch;
 }
 
@@ -49,6 +51,8 @@ void InsertFirst(Node **head, int data)
 
 	temp->next = *head;
 	*head = temp;
+
+	
 }
 
 void InsertLast(Node **head, int data)
@@ -56,7 +60,6 @@ void InsertLast(Node **head, int data)
 	Node *temp = new Node();
 	temp->data = data;
 	temp->next = NULL;
-
 	current = *head;
 
 	//if there is no data in LinkedList, temp is the new head
@@ -70,12 +73,41 @@ void InsertLast(Node **head, int data)
 
 		current->next = temp;
 	}
+
+}
+
+void DeleteListItem(Node **head, int n)
+{
+	current = *head;
+	Node *prev = current;
+
+	if (n == 1)
+	{
+		*head = current->next;
+		
+		delete current;
+		return;
+	}
+	else if (n > 1)
+	{
+		for (int i = 0; i < n - 1; i++)
+		{
+			prev = current;
+			current = current->next;
+		}
+		if (current != NULL)
+		{
+			prev->next = current->next;
+			delete current;
+		}
+	}
+
 }
 
 //start with head  , until current node is not empty print node's data
-void PrintList(Node *head)
+void PrintList(Node **head)
 {
-	current = head;
+	current = *head;
 
 	while (current != NULL)
 	{
