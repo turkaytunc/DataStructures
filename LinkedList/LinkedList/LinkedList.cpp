@@ -12,28 +12,28 @@ struct Node
 	Node *next;
 };
 
-Node *head = NULL;
 Node *current = NULL;
 
-void InsertFirst(int data);
-void InsertLast(int data);
-void PrintList();
+void InsertFirst(Node **head, int data);
+void InsertLast(Node **head, int data);
+void PrintList(Node *head);
+
 
 
 int main()
 {
+	Node *head = NULL;
+
 	char ch;
 	int data = 0;
-
-
 
 	while (data != -1)
 	{
 		cin >> data;
 		if (data == -1)break;
-		InsertFirst(data);
+		InsertFirst(&head,data);
 		system("cls");
-		PrintList();
+		PrintList(head);
 	}
 
 
@@ -41,26 +41,26 @@ int main()
 }
 
 //insert new data to beginning of list
-void InsertFirst(int data)
+void InsertFirst(Node **head, int data)
 {
 	Node *temp = new Node();
 	temp->data = data;
 	temp->next = NULL;
 
-	temp->next = head;
-	head = temp;
+	temp->next = *head;
+	*head = temp;
 }
 
-void InsertLast(int data)
+void InsertLast(Node **head, int data)
 {
 	Node *temp = new Node();
 	temp->data = data;
 	temp->next = NULL;
 
-	current = head;
+	current = *head;
 
 	//if there is no data in LinkedList, temp is the new head
-	if (head == NULL) head = temp;
+	if (*head == NULL) *head = temp;
 
 
 	//iterate through last node and insert new node
@@ -73,7 +73,7 @@ void InsertLast(int data)
 }
 
 //start with head  , until current node is not empty print node's data
-void PrintList()
+void PrintList(Node *head)
 {
 	current = head;
 
