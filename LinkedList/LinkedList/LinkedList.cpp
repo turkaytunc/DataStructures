@@ -6,13 +6,14 @@ using std::cin;
 using std::endl;
 
 
-struct Node
+class Node
 {
-	int data;
-	Node *next;
+public:
+	 int data;
+	 Node *next;
 };
-
 Node *current = NULL;
+
 
 void InsertFirst(Node **head, int data);
 void InsertLast(Node **head, int data);
