@@ -12,15 +12,42 @@ struct Node
 	Node *prev;
 };
 
-
+void InserFirst(Node **head);
+void InsertLast(Node **end);
+void PrintList(Node **head);
+void DeleteItem(Node **head);
 
 
 
 int main()
 {
-   
+	char ch = ' ';
 
+
+
+
+
+
+	cin >> ch;
+}
+
+
+void InserFirst(Node **head)
+{
 
 }
+void InsertLast(Node **end)
+{
+
+}
+void PrintList(Node **head)
+{
+
+}
+void DeleteItem(Node **head)
+{
+
+}
+
 
 
