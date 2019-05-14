@@ -39,8 +39,8 @@ int main()
 		system("cls");
 		PrintList(&head);
 	}
-	cout << "Delete item at index \n";
-	cin >> n;
+	//cout << "Delete item at index \n";
+	//cin >> n;
 
 	//DeleteItem(&head, n);
 	//PrintList(&head);
