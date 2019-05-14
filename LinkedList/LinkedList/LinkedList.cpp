@@ -39,6 +39,10 @@ int main()
 		system("cls");
 		PrintList(&head);
 	}
+
+	ReverseListIterative(&head);
+
+	PrintList(&head);
 	//cout << "Delete item at index \n";
 	//cin >> n;
 
@@ -52,7 +56,7 @@ int main()
 	cin >> ch;
 }
 
-//insert new data to beginning of list
+//Insert new data to beginning of the list
 void InsertFirst(Node **head, int data)
 {
 	Node *temp = new Node();
@@ -128,7 +132,18 @@ void DeleteItem(int key, Node ** head)
 
 void ReverseListIterative(Node **head)
 {
+	Node *prev, *next;
+	prev = NULL;
+	current = *head;
 
+	while (current != NULL)
+	{
+		next = current->next;
+		current->next = prev;
+		prev = current;
+		current = next;
+	}
+	*head = prev;
 }
 void ReverseListRecursive(Node **head)
 {
