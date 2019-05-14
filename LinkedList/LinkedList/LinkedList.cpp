@@ -12,6 +12,7 @@ public:
 	 int data;
 	 Node *next;
 };
+
 Node *current = NULL;
 
 void InsertFirst(Node **head, int data);
@@ -19,7 +20,8 @@ void InsertLast(Node **head, int data);
 void PrintList(Node **head);
 void DeleteItem(Node **head, int n);
 void DeleteItem(int key, Node **head);
-void ReverseList(Node **head);
+void ReverseListIterative(Node **head);
+void ReverseListRecursive(Node **head);
 
 int main()
 {
@@ -40,11 +42,13 @@ int main()
 	cout << "Delete item at index \n";
 	cin >> n;
 
-	DeleteItem(&head, n);
-	PrintList(&head);
+	//DeleteItem(&head, n);
+	//PrintList(&head);
 
-	DeleteItem(5, &head);
-	PrintList(&head);
+	//DeleteItem(5, &head);
+	//PrintList(&head);
+
+
 	cin >> ch;
 }
 
@@ -122,7 +126,11 @@ void DeleteItem(int key, Node ** head)
 	}
 }
 
-void ReverseList(Node **head)
+void ReverseListIterative(Node **head)
+{
+
+}
+void ReverseListRecursive(Node **head)
 {
 
 }
