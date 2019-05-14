@@ -132,7 +132,7 @@ void DeleteItem(int key, Node ** head)
 
 void ReverseListIterative(Node **head)
 {
-	Node *prev, *next;
+	Node *prev, *next = NULL;
 	prev = NULL;
 	current = *head;
 
@@ -144,6 +144,8 @@ void ReverseListIterative(Node **head)
 		current = next;
 	}
 	*head = prev;
+
+	delete next,prev;
 }
 void ReverseListRecursive(Node **head)
 {
