@@ -19,6 +19,7 @@ void InsertLast(Node **head, int data);
 void PrintList(Node **head);
 void DeleteItem(Node **head, int n);
 void DeleteItem(int key, Node **head);
+void ReverseList(Node **head);
 
 int main()
 {
@@ -119,6 +120,11 @@ void DeleteItem(int key, Node ** head)
 		}
 		current = current->next;
 	}
+}
+
+void ReverseList(Node **head)
+{
+
 }
 //Print items in the list
 void PrintList(Node **head)
