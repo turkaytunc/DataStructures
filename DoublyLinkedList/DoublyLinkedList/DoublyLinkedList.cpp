@@ -72,7 +72,6 @@ void Insert(int age, char *name, char *surname)
 	}
 	end = p;
 }
-
 void ReversePrintList()
 {
 	struct Node *p = (struct Node *)malloc(sizeof(struct Node));
@@ -96,7 +95,6 @@ void PrintList()
 		p = p->next;
 	}
 }
-
 void WriteToFile()
 {
 	struct Node *p = (struct Node *)malloc(sizeof(struct Node));
@@ -118,7 +116,6 @@ void WriteToFile()
 	}
 	fclose(fp);
 }
-
 struct Node* DeleteListItem(int key)
 {
 	current = head;
@@ -156,7 +153,6 @@ struct Node* DeleteListItem(int key)
 
 	return current;
 }
-
 void Menu(char choice)
 {
 	char name[10];
@@ -167,10 +163,10 @@ void Menu(char choice)
 	{
 
 
-		printf("Name surname age: \n");
+		printf("Age Name Surname: \n");
+		scanf("%d", &age);
 		scanf("%s", name);
 		scanf("%s", surname);
-		scanf("%d", &age);
 		Insert(age, name, surname);
 
 	}
