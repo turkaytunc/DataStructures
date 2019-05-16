@@ -40,7 +40,27 @@ public:
 		top--;
 	}
 
-	
+	// Top operation to return element at top of stack. 
+	int Top()
+	{
+		return A[top];
+	}
+
+	// This function will return 1 (true) if stack is empty, 0 (false) otherwise
+	int IsEmpty()
+	{
+		if (top == -1) return 1;
+		return 0;
+	}
+	// This will print all the elements in the stack at any stage. 
+	void Print()
+	{
+		int i;
+		cout << ("Stack: ");
+		for (i = 0; i <= top; i++)
+			cout << ("%d ", A[i]);
+		cout << ("\n");
+	}
 };
 
 int main()
@@ -49,7 +69,8 @@ int main()
 	Stack *stack = new Stack();
 
 	stack->Push(5);
-	
+	cout << stack->IsEmpty() << endl;
+	stack->Print();
 
 	cin >> ch;
 }
