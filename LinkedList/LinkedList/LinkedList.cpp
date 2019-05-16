@@ -40,10 +40,10 @@ int main()
 		PrintList(&head);
 	}
 
-	//ReverseListIterative(&head);
-	//PrintList(&head);
-	//ReverseListIterative(&head);
-	//PrintList(&head);
+	ReverseListIterative(&head);
+	PrintList(&head);
+	ReverseListIterative(&head);
+	PrintList(&head);
 	
 	//cout << "Delete item at index \n";
 	//cin >> n;
