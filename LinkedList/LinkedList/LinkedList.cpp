@@ -40,12 +40,13 @@ int main()
 		PrintList(&head);
 	}
 
-	ReverseListIterative(&head);
-
-	PrintList(&head);
+	//ReverseListIterative(&head);
+	//PrintList(&head);
+	//ReverseListIterative(&head);
+	//PrintList(&head);
+	
 	//cout << "Delete item at index \n";
 	//cin >> n;
-
 	//DeleteItem(&head, n);
 	//PrintList(&head);
 
@@ -129,7 +130,7 @@ void DeleteItem(int key, Node ** head)
 		current = current->next;
 	}
 }
-
+//Reverse list
 void ReverseListIterative(Node **head)
 {
 	Node *prev, *next = NULL;
@@ -147,6 +148,7 @@ void ReverseListIterative(Node **head)
 
 	delete next,prev;
 }
+
 void ReverseListRecursive(Node **head)
 {
 
