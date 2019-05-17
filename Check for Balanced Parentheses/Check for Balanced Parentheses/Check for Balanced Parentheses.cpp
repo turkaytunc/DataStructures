@@ -49,6 +49,29 @@ void display()
 }
 int main()
 {
-	
+	char exp[36], x, t;
+	int k, i;
+
+	gets_s(exp, 10);
+	printf("\nyour inputs are %s", exp);
+	k = strlen(exp);
+	printf("\nthe length of exp is %d", k);
+	for (i = 0; i < k; i++)
+	{
+		if ((exp[i] == '{') || (exp[i] == '(') || (exp[i] == '['))
+		{
+			x = exp[i];
+			push(x);
+
+		}
+		else if ((exp[i] == '}') || (exp[i] == ')') || (exp[i] == ']'))
+		{
+
+			t = exp[i];
+
+			pop(t);
+		}
+	}
+	display();
 	_getch();
 }
