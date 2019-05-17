@@ -45,13 +45,13 @@ int main()
 	ReverseListIterative(&head);
 	PrintList(&head);
 	
-	//cout << "Delete item at index \n";
-	//cin >> n;
-	//DeleteItem(&head, n);
-	//PrintList(&head);
+	cout << "Delete item at index \n";
+	cin >> n;
+	DeleteItem(&head, n);
+	PrintList(&head);
 
-	//DeleteItem(5, &head);
-	//PrintList(&head);
+	DeleteItem(5, &head);
+	PrintList(&head);
 
 
 	cin >> ch;
