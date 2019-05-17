@@ -35,9 +35,20 @@ void pop(char t)
 
 
 }
+void display()
+{
+	int i;
+	if (top == -1)
+		printf("stack empty\n balanced paranthesis\n");
+	else
+	{
 
+		for (i = 0; i <= top; i++)
+			printf("\t %c", stack[i]);
+	}
+}
 int main()
 {
-
+	
 	_getch();
 }
