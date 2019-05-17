@@ -1,5 +1,4 @@
 #include "pch.h"
-
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -31,7 +30,6 @@ struct DataItem *search(int key)
 	//move in array until an empty 
 	while (hashArray[hashIndex] != NULL)
 	{
-
 		if (hashArray[hashIndex]->key == key)
 			return hashArray[hashIndex];
 
@@ -41,13 +39,11 @@ struct DataItem *search(int key)
 		//wrap around the table
 		hashIndex %= SIZE;
 	}
-
 	return NULL;
 }
 
 void insert(int key, int data)
 {
-
 	struct DataItem *item = (struct DataItem*) malloc(sizeof(struct DataItem));
 	item->data = data;
 	item->key = key;
@@ -64,15 +60,36 @@ void insert(int key, int data)
 		//wrap around the table
 		hashIndex %= SIZE;
 	}
-
 	hashArray[hashIndex] = item;
 }
 
+struct DataItem* Delete(struct DataItem* item)
+{
+	int key = item->key;
+	//get the hash 
+	int hashIndex = hashCode(key);
+
+	//move in array until an empty
+	while (hashArray[hashIndex] != NULL)
+	{
+		if (hashArray[hashIndex]->key == key)
+		{
+			struct DataItem* temp = hashArray[hashIndex];
+			//assign a dummy item at deleted position
+			hashArray[hashIndex] = dummyItem;
+			return temp;
+		}
+		//go to next cell
+		++hashIndex;
+		//wrap around the table
+		hashIndex %= SIZE;
+	}
+	return NULL;
+}
 
 void display()
 {
 	int i = 0;
-
 	for (i = 0; i < SIZE; i++)
 	{
 
@@ -81,7 +98,6 @@ void display()
 		else
 			printf(" ~~ ");
 	}
-
 	printf("\n");
 }
 
@@ -113,9 +129,17 @@ int main()
 		printf("Element not found\n");
 	}
 
-	
+	Delete(item);
+	item = search(37);
 
-	char ch;
-	ch = _getch();
+	if (item != NULL)
+	{
+		printf("Element found: %d\n", item->data);
+	}
+	else
+	{
+		printf("Element not found\n");
+	}
+	_getch();
 
 }
