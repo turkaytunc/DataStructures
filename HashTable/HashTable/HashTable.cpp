@@ -6,7 +6,7 @@
 #include <stdbool.h>
 #include <conio.h>
 
-#define SIZE 40
+#define SIZE 20
 
 struct DataItem
 {
@@ -23,7 +23,27 @@ int hashCode(int key)
 	return key % SIZE;
 }
 
+struct DataItem *search(int key)
+{
+	//get the hash 
+	int hashIndex = hashCode(key);
 
+	//move in array until an empty 
+	while (hashArray[hashIndex] != NULL)
+	{
+
+		if (hashArray[hashIndex]->key == key)
+			return hashArray[hashIndex];
+
+		//go to next cell
+		++hashIndex;
+
+		//wrap around the table
+		hashIndex %= SIZE;
+	}
+
+	return NULL;
+}
 
 void insert(int key, int data)
 {
@@ -47,7 +67,6 @@ void insert(int key, int data)
 
 	hashArray[hashIndex] = item;
 }
-
 
 
 void display()
@@ -83,7 +102,19 @@ int main()
 	insert(37, 97);
 
 	display();
+	item = search(8);
+
+	if (item != NULL)
+	{
+		printf("Element found: %d\n", item->data);
+	}
+	else
+	{
+		printf("Element not found\n");
+	}
+
 	
+
 	char ch;
 	ch = _getch();
 
