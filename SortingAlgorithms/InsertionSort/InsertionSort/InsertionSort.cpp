@@ -6,11 +6,17 @@ using std::cin;
 using std::endl;
 
 void InsertionSort(int *arr, int size);
-
+void PrintArray(int *arr, int size);
 
 int main()
 {
 
+	int A[10] = { 5,-1,0,3,7,1,5,103,87,90 };
+
+	PrintArray(A, 10);
+
+	InsertionSort(A, 10);
+	PrintArray(A, 10);
 
 	char ch = ' ';
 	cin >> ch;
@@ -41,4 +47,11 @@ void InsertionSort(int *arr, int size)
 	}
 }
 
-
+void PrintArray(int *arr, int size)
+{
+	for (int i = 0; i < size; i++)
+	{
+		cout << arr[i] << " ";
+	}
+	cout << "\n";
+}
